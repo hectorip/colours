@@ -21,9 +21,11 @@ defmodule ColoursWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ColoursWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ColoursWeb do
+    pipe_through :api
+
+    get "/rgb2hsl", ColoursController, :rgb_to_hsl
+  end
 
   # Enables LiveDashboard only for development
   #
